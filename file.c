@@ -54,7 +54,7 @@ int parse_line(char *buffer, int line_number, int format)
 		return (0);
 	if (strcmp(op_code, "queue") == 0)
 		return (1);
-	find_func(op_code, value, line_number, format);
+	check_func(op_code, value, line_number, format);
 	return (format);
 }
 

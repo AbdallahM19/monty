@@ -27,15 +27,15 @@ int main(int argc, char *argv[])
  */
 stack_t *create_node(int n)
 {
-	stack_t *node;
+	stack_t *temp;
 
-	node = malloc(sizeof(stack_t));
-	if (node == NULL)
+	temp = malloc(sizeof(stack_t));
+	if (temp == NULL)
 		err(4);
-	node->next = NULL;
-	node->prev = NULL;
-	node->n = n;
-	return (node);
+	temp->next = NULL;
+	temp->prev = NULL;
+	temp->n = n;
+	return (temp);
 }
 
 /**

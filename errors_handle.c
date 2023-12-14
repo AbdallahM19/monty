@@ -48,7 +48,7 @@ void more_err(int error_code, ...)
 {
 	va_list ag;
 	char *op;
-	int l_num;
+	int line_number;
 
 	va_start(ag, error_code);
 	switch (error_code)
@@ -62,9 +62,9 @@ void more_err(int error_code, ...)
 				va_arg(ag, int));
 			break;
 		case 8:
-			l_num = va_arg(ag, unsigned int);
+			line_number = va_arg(ag, unsigned int);
 			op = va_arg(ag, char *);
-			fprintf(stderr, "L%d: can't %s, stack too short\n", l_num, op);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", line_number, op);
 			break;
 		case 9:
 			fprintf(stderr, "L%d: division by zero\n",
@@ -85,17 +85,17 @@ void more_err(int error_code, ...)
 void string_err(int error_code, ...)
 {
 	va_list ag;
-	int l_num;
+	int line_number;
 
 	va_start(ag, error_code);
-	l_num = va_arg(ag, int);
+	line_number = va_arg(ag, int);
 	switch (error_code)
 	{
 		case 10:
-			fprintf(stderr, "L%d: can't pchar, value out of range\n", l_num);
+			fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 			break;
 		case 11:
-			fprintf(stderr, "L%d: can't pchar, stack empty\n", l_num);
+			fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 			break;
 		default:
 			break;
