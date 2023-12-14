@@ -38,7 +38,7 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * div_t - Divides the second top element by the top element of the stack.
+ * divide - Divides the second top element by the top element of the stack.
  * @stack: Double pointer to the stack.
  * @line_number: Line number of the opcode.
  */
